@@ -18,16 +18,16 @@ The WIM ICO is made of three contracts which are ERC20 compliant token.The namin
 ##### pause() - emergency stop of ICO
 > function pause() onlyOwner external returns (bool)
 
-#####  payable - validator function
+##### payable - validator function
 > function() payable isFundingModeStop external
 
 ##### purchase - carry out purchase transaction
 > function purchase() payable isFundingModeStop external
 
-#####  finalize - end the ICO gracefully 
+##### finalize - end the ICO gracefully 
 > finalize() external onlyOwner
 
-#####  refund - 
+##### refund - 
 > function refund() isFundingModeStop external
  
 #### Events
