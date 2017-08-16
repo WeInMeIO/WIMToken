@@ -1,38 +1,58 @@
-# WIM Contracts
+# WeInMe Contracts
 
 ## Description:
 
-The WIM ICO is made of three contracts which are ERC20 compliant token.The naming convention used describs the purpose of the individual contracts.
+The WeInMe ICO is made of three contracts which are ERC20 compliant token built using OpenZeppelin library.  
+The naming convention used describs the purpose of the individual contracts.
+
 
 1) WIMPreSale -
-2) WIMToken - 
+2) WIMToken - deployed in Rinkeby testnet
 3) TeamAllocation - 
-4) UnsoldAllocation - 
+4) UnsoldAllocation - deployed in Rinkeby testnet
+
+## Dependencies
+
+We use Truffle in order to compile and test the contracts.
+
+It can be installed: npm install -g truffle
+
+For more information visit https://truffle.readthedocs.io/en/latest/
+
+Also running node with active json-rpc is required. For testing puproses we suggest using https://github.com/ethereumjs/testrpc
+
+## Usage
+
+./run_testrpc.sh - run testrpc node with required params
+
+truffle compile - compile all contracts
+
+truffle test - run tests
 
 ## Specification
 ### WIMToken
-  Ownable and StandardToken classes.
+  Extends Zeppelin Ownable and StandardToken classes.   
   This class will handle the ICO transaction.
 
 #### Methods
 ##### pause() - emergency stop of ICO
-> function pause() onlyOwner external returns (bool)
+ > function pause() onlyOwner external returns (bool)
 
-##### payable - validator function
-> function() payable isFundingModeStop external
+#####  payable - validator function
+ > function() payable isFundingModeStop external
 
-##### purchase - carry out purchase transaction
-> function purchase() payable isFundingModeStop external
+ ##### purchase - carry out purchase transaction
+ > function purchase() payable isFundingModeStop external
 
-##### finalize - end the ICO gracefully 
-> finalize() external onlyOwner
+#####  finalize - end the ICO gracefully
+ > finalize() external onlyOwner
 
-##### refund - 
-> function refund() isFundingModeStop external
- 
+#####  refund -
+ > function refund() isFundingModeStop external
+
 #### Events
 ##### Refund
 > event Refund(address indexed _from,uint256 _value);
 
-##### Migrate
+##### Migrate    
 > event Migrate(address indexed _from, address indexed _to, uint256 _value);
