@@ -6,9 +6,9 @@ import './zeppelin/lifecycle/Pausable.sol';
 
 contract WIMPresale is Pausable {
   using SafeMath for uint;
-  uint constant totalPresaleSupply = 44000000;
-  uint constant presaleSupply = 40000000;
-  uint constant discountSupply = 4000000;
+  uint constant totalPresaleSupply = 237500000;
+  uint constant presaleSupply = 237500000;
+  uint constant discountSupply = 0;
 
   address WIMTokenFactory;
   uint totalUsedTokens;
@@ -20,9 +20,9 @@ contract WIMPresale is Pausable {
   uint startBlock;
   uint endBlock;
 
-  //price will be in finney
-  //uint constant PRESALE_PRICE = 1 finney;
-  uint constant PRESALE_PRICE = 0.0005 ether;
+  //price will be in USD
+  //uint constant PRESALE_PRICE = 0.05 usd;
+  uint constant PRESALE_PRICE = 0.0002 ether;
 
   function WIMPresale(address _WIMTokenFactory,uint _startBlock,uint _endBlock) {
     if(_WIMTokenFactory == address(0)) throw;
